@@ -1,4 +1,5 @@
 import './App.css';
+import React from 'react';
 import User from './User';
 import ErrorBoundary from './ErrorBoundary';
 

@@ -2,9 +2,14 @@ import React, { Component } from 'react';
 import * as Sentry from '@sentry/react';
 
 class ErrorBoundary extends Component {
-  state = {
-    error: false,
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      error: false,
+    };
+
+    this.render = this.render.bind(this);
+  }
 
   componentDidCatch(error, info) {
     console.log('에러가 발생했습니다.');
@@ -23,10 +28,12 @@ class ErrorBoundary extends Component {
   }
 
   render() {
-    if (this.state.error) {
+    const { error } = this.state;
+    const { children } = this.props;
+    if (error) {
       return <h1>에러 발생!</h1>;
     }
-    return this.props.children;
+    return children;
   }
 }
 

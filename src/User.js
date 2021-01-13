@@ -7,10 +7,14 @@ function User({ user }) {
   return (
     <div>
       <dibv>
-        <b>ID</b>: {user.id}
+        <b>ID</b>
+        :
+        {user.id}
       </dibv>
       <div>
-        <b>Username</b>: {user.username}
+        <b>Username</b>
+        :
+        {user.username}
       </div>
     </div>
   );
